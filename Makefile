@@ -25,11 +25,12 @@ boot:	${UBT}/.config ${UBT}/u-boot.bin
 
 ${UBT}/.config: 
 	@echo " => Configuring U-boot"
-	@make -C ${UBT} V=0 gti_mochabin-88f7040_defconfig
+	ls -lsa ${UBT}
+	make -C ${UBT} gti_mochabin-88f7040_defconfig
 
 ${UBT}/u-boot.bin: ${UBT}/.config
 	@echo " => Building U-boot"
-	@make -C ${UBT} V=0 DEVICE_TREE=armada-7040-mochabin 
+	make -C ${UBT} DEVICE_TREE=armada-7040-mochabin 
 
 fit:	${UBT}/u-boot.bin
 	@echo " => Building U-boot FIT"
