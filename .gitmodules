@@ -1,0 +1,12 @@
+[submodule "atf-marvell"]
+	path = globalscale/atf-marvell
+	url = https://github.com/globalscaletechnologies/atf-marvell.git
+[submodule "mv-ddr-marvell"]
+	path = globalscale/mv-ddr-marvell
+	url = https://github.com/globalscaletechnologies/mv-ddr-marvell.git
+[submodule "binaries-marvell"]
+	path = globalscale/binaries-marvell
+	url = https://github.com/globalscaletechnologies/binaries-marvell.git
+[submodule "u-boot-marvell"]
+	path = globalscale/u-boot-marvell
+	url = https://github.com/globalscaletechnologies/u-boot-marvell.git
