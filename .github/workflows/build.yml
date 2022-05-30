@@ -9,9 +9,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install toolchain
       run: |
-        sudo apt install gcc-aarch64-linux-gnu device-tree-compiler
-        sudo apt install gawk ccache gettext libssl-dev libncurses5 
-        sudo apt install patch zlib1g-dev
+        sudo apt install device-tree-compiler
         wget -q https://releases.linaro.org/components/toolchain/binaries/7.3-2018.05/aarch64-linux-gnu/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu.tar.xz
         mkdir -p bin
         tar -xJf gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu.tar.xz -C bin/
