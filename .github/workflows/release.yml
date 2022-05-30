@@ -43,7 +43,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./release/mochabin-4g-boot.bin
-          asset_name: mochabin-4g-uboot.bin
+          asset_name: mochabin-4g-boot.bin
           asset_content_type: application/octet-stream
       - name: upload U-boot-8G artifact
         uses: actions/upload-release-asset@v1
@@ -52,5 +52,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./release/mochabin-8g-boot.bin
-          asset_name: mochabin-8g-uboot.bin
+          asset_name: mochabin-8g-boot.bin
           asset_content_type: application/octet-stream
