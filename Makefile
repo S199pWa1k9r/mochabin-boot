@@ -32,6 +32,13 @@ ${UBT}/u-boot.bin: ${UBT}/.config
 	@echo " => Building U-boot"
 	make -C ${UBT} DEVICE_TREE=armada-7040-mochabin 
 
+bl31:
+	@echo " => Building BL31"
+	make -C ${ATF} CROSS_COMPILE=${COM} MV_DDR_PATH=${DDR} SCP_BL2=${SCP} \
+	BL33=${UBT}/u-boot.bin \
+	${PAR} DEBUG=${DEB} DDR_TOPOLOGY=${RAM} PLAT=a70x0_mochabin \
+	bl31
+
 fit:	${UBT}/u-boot.bin
 	@echo " => Building U-boot FIT"
 	make -C ${ATF} CROSS_COMPILE=${COM} MV_DDR_PATH=${DDR} SCP_BL2=${SCP} \
