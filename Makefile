@@ -25,12 +25,11 @@ boot:	${UBT}/.config ${UBT}/u-boot.bin
 
 ${UBT}/.config: 
 	@echo " => Configuring U-boot"
-	ls -lsa ${UBT}
 	make -C ${UBT} gti_mochabin-88f7040_defconfig
 
 ${UBT}/u-boot.bin: ${UBT}/.config
 	@echo " => Building U-boot"
-	make -C ${UBT} DEVICE_TREE=armada-7040-mochabin 
+	make -C ${UBT} CROSS_COMPILE=${COM} V=1 DEVICE_TREE=armada-7040-mochabin 
 
 bl31:
 	@echo " => Building BL31"
