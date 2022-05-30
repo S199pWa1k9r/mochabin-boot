@@ -37,7 +37,7 @@ bl31:
 	make -C ${ATF} CROSS_COMPILE=${COM} MV_DDR_PATH=${DDR} SCP_BL2=${SCP} \
 	BL33=${UBT}/u-boot.bin \
 	${PAR} DEBUG=${DEB} DDR_TOPOLOGY=${RAM} PLAT=a70x0_mochabin \
-	bl31
+	bl31 all fip
 
 fit:	${UBT}/u-boot.bin
 	@echo " => Building U-boot FIT"
